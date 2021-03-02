@@ -1,0 +1,18 @@
+# Kiran Pillai
+# 1780014
+
+if __name__ == '__main__':
+    word_input = input()
+    word = ""
+    word_reverse = ""
+
+    for characters in word_input:
+        if characters != ' ':
+            word += characters
+            word_reverse = characters + word_reverse
+
+    if word == word_reverse:
+        print(word_input + " is a palindrome")
+    else:
+        print(word_input + " is not a palindrome")
+
