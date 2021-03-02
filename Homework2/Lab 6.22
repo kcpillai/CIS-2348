@@ -1,0 +1,27 @@
+# Kiran Pillai
+# 1780014
+
+def flag():
+    x_1 = int(input())
+    y_1 = int(input())
+    a_1 = int(input())
+
+    x_2 = int(input())
+    y_2 = int(input())
+    a_2 = int(input())
+
+    answer_found = False
+
+    for x_range in range(-10, 10):
+        for y_range in range(-10, 10):
+            if x_1 * x_range + y_1 * y_range == a_1 and x_2 * x_range + y_2 * y_range == a_2:
+                print(x_range, y_range)
+                answer_found = True
+
+    if not answer_found:
+        print("No solution")
+
+
+if __name__ == '__main__':
+    flag()
+    
