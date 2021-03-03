@@ -1,2 +1,35 @@
 # Kiran Pillai
 # 1780014
+
+import datetime
+current_date = datetime.datetime.now()
+today = datetime.datetime(2021, 3, 1)
+
+months_to_numbers = {"january": "1", "february": "2", "march": "3", "april": "4", "may": "5", "june": "6",
+                     "july": "7", "august": "8", "september": "9", "october": "10", "november": "11", "december": "12"}
+
+
+input_file = open('inputDates.txt', 'r')
+output_file = open('parsedDates.txt', 'w')
+
+for dates in input_file:
+    if dates != "-1":
+        string = dates.split()
+        if len(string) >= 3:
+            mm = string[0]
+            dd = string[1]
+            yy = string[2]
+
+            if mm.lower() in months_to_numbers:
+                missing = dd[-1]
+
+                if dates in input_file >= today:
+                    missing = yy[-1]
+
+                    if missing == ',':
+                        day = dd[:len(dd)-1]
+                        month_int = months_to_numbers[mm.lower()]
+                        output = month_int + "/" + day + "/" + yy
+
+                        output_file.write(output)
+                        output_file.write("\n")
