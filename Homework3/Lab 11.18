@@ -1,0 +1,15 @@
+# Kiran Pillai
+# 1780014
+
+inputs = input().split()
+answer = []
+
+for num in inputs:
+    num = int(num)
+    if num >= 0:
+        answer.append(num)
+
+answer.sort()
+for num in answer:
+    print(num, end=' ')
+    
