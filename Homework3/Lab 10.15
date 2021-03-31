@@ -1,0 +1,32 @@
+# Kiran Pillai
+# 1780014
+
+class Team:
+    def __init__(self):
+        self.teamname = 'none'
+        self.wins = 0
+        self.losses = 0
+
+    def get_win_percentage(self):
+        percent = self.wins / (self.wins + self.losses)
+        return percent
+
+
+if __name__ == "__main__":
+
+    team = Team()
+
+    teamname = input()
+    wins = int(input())
+    losses = int(input())
+
+    team.teamname = teamname
+    team.wins = wins
+    team.losses = losses
+
+    if team.get_win_percentage() >= 0.5:
+        print('Congratulations, Team', team.teamname, 'has a winning average!')
+    else:
+        print('Team', team.teamname, 'has a losing average.')
+
+
