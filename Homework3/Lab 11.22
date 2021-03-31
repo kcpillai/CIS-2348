@@ -1,0 +1,8 @@
+# Kiran Pillai
+# 1780014
+
+word_input = input()
+output = word_input.split(" ")
+for word in output:
+    print(word, output.count(word))
+
