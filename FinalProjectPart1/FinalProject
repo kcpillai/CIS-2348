@@ -46,7 +46,7 @@ class OutputInventory:
 
     def past_service(self):
         items = self.item_list
-        keys = sorted(items.keys(), key=lambda x: datetime.strptime(items[x]['service_date'], "%m/%d/%Y").date(), reverse=True)
+        keys = sorted(items.keys(), key=lambda x: datetime.strptime(items[x]['service_date'], "%m/%d/%Y").date(), reverse = True)
         with open('PastServiceDateInventory.csv', 'w') as file:
             for item in keys:
                 item_id = item
